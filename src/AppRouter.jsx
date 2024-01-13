@@ -1,18 +1,21 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import { routes } from './utils/routes.js'
 import Home from './components/pages/Home'
-import NavbarMenu from './components/navbar/Navbar'
-import PeliculaDetalles from './components/detalle-pelicula/PeliculaDetalles.jsx'
+import TarjetaPeliculaDetalles from './components/movie/TarjetaPeliculaDetalles.jsx'
 
 export default function AppRouter() {
     return (
         <BrowserRouter>
-            <NavbarMenu />
+            <NavLink to={routes.publicas.INDEX}>
+                <h1 className="pt-5 pb-3 text-center text-4xl font-bold text-white">
+                    Movies
+                </h1>
+            </NavLink>
             <Routes>
                 <Route path={routes.publicas.INDEX} element={<Home />} />
-                <Route path={routes.publicas.PERFIL} element={<>Perfil</>} />
-                <Route path={routes.publicas.LOGIN} element={<>Login</>} />
-                <Route path={routes.publicas.MOVIEDETAILS} element={<PeliculaDetalles />} />
+                <Route path={routes.publicas.PERFIL} element={<p>Perfil</p>} />
+                <Route path={routes.publicas.LOGIN} element={<p>Login</p>} />
+                <Route path={routes.publicas.MOVIEDETAILS} element={<TarjetaPeliculaDetalles />} />
             </Routes>
         </BrowserRouter>
     )

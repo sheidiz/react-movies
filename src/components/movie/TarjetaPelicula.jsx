@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { routes } from "../../utils/routes";
 import { getPosterW300, getYear } from "../../utils/dataTransform";
 
 function TarjetaPelicula({ pelicula }) {

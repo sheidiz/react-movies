@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getMovie, getPopularMovies } from "../../utils/api";
+import { getMovie } from "../../utils/api";
 import { getMovieDuration, getPosterW400, getYear } from "../../utils/dataTransform";
 
-function PeliculaDetalles() {
+function TarjetaPeliculaDetalles() {
     const [movie, setMovie] = useState(null);
     const { movieId } = useParams();
 
@@ -66,4 +66,4 @@ function PeliculaDetalles() {
     )
 }
 
-export default PeliculaDetalles
+export default TarjetaPeliculaDetalles

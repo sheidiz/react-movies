@@ -14,8 +14,16 @@ export async function getData(path) {
     return res.json();
 }
 
-export const getPopularMovies = async () => {
-    const movies = await getData("/movie/popular?language=en-US&page=1");
+export const getPopularMovies = async (page) => {
+    const movies = await getData("/movie/popular?page=" + page);
+
+    if (!movies) return [];
+
+    return movies;
+}
+
+export const getMoviesBySearch = async (search) => {
+    const movies = await getData("/search/movie?query=" + search);
 
     if (!movies) return [];
 
@@ -24,7 +32,8 @@ export const getPopularMovies = async () => {
 
 export const getMovie = async (id) => {
     const movie = await getData("/movie/" + id);
-    if(!movie) return null;
+    if (!movie) return null;
 
     return movie
 }
+
