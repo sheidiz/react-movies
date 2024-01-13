@@ -21,7 +21,7 @@ function Search() {
                     id="movieSearch"
                     placeholder="search a movie.."
                     onChange={(e) => setSearchTerm(e.target.value)} />
-                <button className="px-2 " type="submit"><TbSearch className="text-white h-5" /></button>
+                <button className="mx-2" type="submit"><TbSearch className="text-white" /></button>
             </form>
         </div>
     )

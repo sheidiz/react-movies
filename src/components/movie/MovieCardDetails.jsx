@@ -27,7 +27,7 @@ function MovieCardDetails() {
         <p className="text-white text-lg text-center py-10">{errorMessage}</p>
     );
 
-    const { original_title, poster_path, release_date, overview, tagline, genres, runtime } = movie;
+    const { title, poster_path, release_date, overview, tagline, genres, runtime, homepage } = movie;
     const poster = getPosterW400(poster_path);
     const year = getYear(release_date)
     const duration = getMovieDuration(runtime)
@@ -36,10 +36,10 @@ function MovieCardDetails() {
         <div className="container-fluid p-6 lg:px-15 m-auto md:w-4/5 lg:w-2/3">
             {year && movie &&
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center ">
-                    <img src={poster} alt={original_title} className="lg:mx-2 rounded-lg" />
+                    <img src={poster} alt={title} className="lg:mx-2 rounded-lg" />
                     <div className="text-white flex flex-col gap-2 lg:gap-4" >
                         <h1 className="font-bold text-4xl">
-                            {original_title} ({year})
+                            {title} ({year})
                         </h1>
                         <p className="text-md italic">
                             {tagline}
@@ -65,11 +65,17 @@ function MovieCardDetails() {
                             <p className="text-lg">Overview:</p>
                             <p>{overview}</p>
                         </div>
+                        {homepage &&
+                            <div className="inline-flex gap-1">
+                                <p>Home Page: </p>
+                                <a className="text-indigo-400" href={homepage}>{title}</a>
+                            </div>
+                        }
                     </div>
                 </div>
             }
             <div className="mt-3 flex justify-center">
-                <button className="bg-white text-[#1f2937] font-bold rounded-md border-white border p-1 "
+                <button className="bg-indigo-500/50 text-[#1f2937] font-bold rounded-md border-transparent border p-1 "
                     onClick={() => navigate(-1)}>
                     Go back
                 </button>
