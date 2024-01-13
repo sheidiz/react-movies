@@ -8,7 +8,7 @@ This project is deployed and accessible at [sd-react-movies.vercel.app](https://
 
 ## Used technologies and dependencies
 
-- [The Movie DB API]([https://api.nookipedia.com/](https://developer.themoviedb.org/docs/getting-started))
+- [The Movie DB API](https://developer.themoviedb.org/docs/getting-started)
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind](https://tailwindcss.com/)
