@@ -1,5 +1,5 @@
 import { Avatar, Dropdown, DropdownHeader, DropdownItem, Navbar, NavbarCollapse, NavbarLink, NavbarToggle } from 'flowbite-react';
-import { routes } from './routes.js';
+import { routes } from '../../utils/routes.js';
 import { NavLink } from 'react-router-dom';
 
 {/*"<NavLink to={routes.publicas.INDEX} className="rounded-md px-3 py-2 text-sm font-medium">Home</NavLink>
@@ -18,7 +18,8 @@ function NavbarMenu() {
                         <NavLink to={routes.publicas.PERFIL} >Perfil</NavLink>
                     </NavbarLink>
                 </NavbarCollapse>
-                <Dropdown
+
+                {/*<Dropdown
                     arrowIcon={false}
                     inline
                     label={
@@ -29,7 +30,7 @@ function NavbarMenu() {
                         <span>email@email.com</span>
                     </DropdownHeader>
                     <DropdownItem>Sign Out</DropdownItem>
-                </Dropdown>
+                </Dropdown>*/}
             </Navbar>
         </>
     )
