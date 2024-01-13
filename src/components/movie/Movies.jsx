@@ -5,7 +5,6 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Loader from '../loader/Loader';
 
 function Movies({ search }) {
-    const [errorMessage, setErrorMessage] = useState("");
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [hasMore, setHasMore] = useState(true);
@@ -26,7 +25,6 @@ function Movies({ search }) {
                 setLoading(false)
             } catch (error) {
                 console.error("Error fetching movies");
-                setErrorMessage("Movies not found :(")
             }
         };
         getData();

@@ -7,7 +7,7 @@ export default function AppRouter() {
     return (
         <BrowserRouter>
             <NavLink to={routes.publicas.INDEX}>
-                <h1 className="pt-5 pb-3 text-center text-4xl font-bold text-white">
+                <h1 className="pb-3 text-center text-4xl font-bold text-white">
                     Movies
                 </h1>
             </NavLink>
