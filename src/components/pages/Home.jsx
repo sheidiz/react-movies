@@ -1,4 +1,4 @@
-import Peliculas from "../movie/Peliculas"
+import Movies from "../movie/Movies"
 import Search from "../search/search";
 import {  useSearchParams } from "react-router-dom";
 
@@ -10,7 +10,7 @@ function Home() {
     return (
         <div className="py-5">
             <Search />
-            <Peliculas search={search} />
+            <Movies search={search} />
         </div>
     )
 }

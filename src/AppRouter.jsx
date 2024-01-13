@@ -1,7 +1,7 @@
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import { routes } from './utils/routes.js'
 import Home from './components/pages/Home'
-import TarjetaPeliculaDetalles from './components/movie/TarjetaPeliculaDetalles.jsx'
+import MovieCardDetails from './components/movie/MovieCardDetails.jsx'
 
 export default function AppRouter() {
     return (
@@ -15,7 +15,7 @@ export default function AppRouter() {
                 <Route path={routes.publicas.INDEX} element={<Home />} />
                 <Route path={routes.publicas.PERFIL} element={<p>Perfil</p>} />
                 <Route path={routes.publicas.LOGIN} element={<p>Login</p>} />
-                <Route path={routes.publicas.MOVIEDETAILS} element={<TarjetaPeliculaDetalles />} />
+                <Route path={routes.publicas.MOVIEDETAILS} element={<MovieCardDetails />} />
             </Routes>
         </BrowserRouter>
     )

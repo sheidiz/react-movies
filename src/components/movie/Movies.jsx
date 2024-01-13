@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { getMoviesBySearch, getPopularMovies } from '../../utils/api';
-import TarjetaPelicula from './TarjetaPelicula';
+import MovieCard from './MovieCard';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loader from '../loader/Loader';
 
-function Peliculas({ search }) {
+function Movies({ search }) {
+    const [errorMessage, setErrorMessage] = useState("");
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [hasMore, setHasMore] = useState(true);
@@ -24,13 +25,14 @@ function Peliculas({ search }) {
                 setHasMore(page < movies.total_pages);
                 setLoading(false)
             } catch (error) {
-                console.error("Error fetching movies")
+                console.error("Error fetching movies");
+                setErrorMessage("Movies not found :(")
             }
         };
         getData();
     }, [search, page])
 
-    if(loading) { <Loader />}
+    if (loading) { <Loader /> }
     return (
         <InfiniteScroll
             dataLength={data.length}
@@ -39,18 +41,17 @@ function Peliculas({ search }) {
             loader={<Loader />}
         >
             <div className="container-fluid">
-                {data && data.length ?
+                {data.length &&
                     <div className="p-3 grid gap-y-5 gap-x-16 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                        {data.map((pelicula) => {
+                        {data.map((movie) => {
                             return (
-                                <TarjetaPelicula key={pelicula.id} pelicula={pelicula} />
+                                movie.release_date && <MovieCard key={movie.id} movie={movie} />
                             )
                         })}
                     </div>
-                    : <p>Movies not found.</p>
                 }
             </div>
         </InfiniteScroll>
     )
 }
-export default Peliculas
+export default Movies

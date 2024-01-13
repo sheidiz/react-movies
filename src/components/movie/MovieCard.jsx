@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { getPosterW300, getYear } from "../../utils/dataTransform";
 
-function TarjetaPelicula({ pelicula }) {
-    const { id, original_title, poster_path, release_date } = pelicula;
+function MovieCard({ movie }) {
+    const { id, original_title, poster_path, release_date } = movie;
     const poster = getPosterW300(poster_path);
     const year = getYear(release_date);
 
@@ -17,4 +17,4 @@ function TarjetaPelicula({ pelicula }) {
     )
 }
 
-export default TarjetaPelicula
+export default MovieCard
